@@ -7,7 +7,7 @@ services:
       - "80:80"
     volumes:
       - ~/Desarrollo:/var/www/html
-      - ~/Desarrollo/docker-containers/lampp-apache/conf:/etc/apache2/sites-enabled
+      - ~/Apps/Docker/containers/lampp-apache/conf:/etc/apache2/sites-enabled
 
   web-legacy:
     build: apache-legacy/
@@ -15,14 +15,14 @@ services:
       - "8056:80"
     volumes:
       - ~/Desarrollo:/var/www/html
-      - ~/Desarrollo/docker-containers/lampp-apache-legacy/conf:/etc/apache2/sites-enabled
+      - ~/Apps/Docker/containers/lampp-apache-legacy/conf:/etc/apache2/sites-enabled
 
   database:
     image: mariadb
     ports:
       - "3306:3306"
     volumes:
-      - ~/Desarrollo/docker-containers/lampp-mariadb:/var/lib/mysql
+      - ~/Apps/Docker/containers/lampp-mariadb:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
 
