@@ -5,6 +5,7 @@ services:
     build: apache/
     ports:
       - "80:80"
+    restart: always
     volumes:
       - ~/Desarrollo:/var/www/html
       - ~/Apps/Docker/containers/lampp-apache/conf:/etc/apache2/sites-enabled
@@ -13,6 +14,7 @@ services:
     build: apache-legacy/
     ports:
       - "8056:80"
+    restart: always
     volumes:
       - ~/Desarrollo:/var/www/html
       - ~/Apps/Docker/containers/lampp-apache-legacy/conf:/etc/apache2/sites-enabled
@@ -21,6 +23,7 @@ services:
     image: mariadb
     ports:
       - "3306:3306"
+    restart: always
     volumes:
       - ~/Apps/Docker/containers/lampp-mariadb:/var/lib/mysql
     environment:
@@ -30,6 +33,7 @@ services:
     image: phpmyadmin/phpmyadmin
     ports:
       - "8090:80"
+    restart: always
     environment:
       - PMA_HOST=database
       - PMA_USER=root
