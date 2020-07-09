@@ -7,17 +7,8 @@ services:
       - "80:80"
     restart: always
     volumes:
+      - ./volumes/apache/conf:/etc/apache2/sites-enabled
       - ~/Desarrollo:/var/www/html
-      - ~/Apps/Docker/containers/lampp-apache/conf:/etc/apache2/sites-enabled
-
-  web-legacy:
-    build: apache-legacy/
-    ports:
-      - "8056:80"
-    restart: always
-    volumes:
-      - ~/Desarrollo:/var/www/html
-      - ~/Apps/Docker/containers/lampp-apache-legacy/conf:/etc/apache2/sites-enabled
 
   database:
     image: mariadb
@@ -25,7 +16,7 @@ services:
       - "3306:3306"
     restart: always
     volumes:
-      - ~/Apps/Docker/containers/lampp-mariadb:/var/lib/mysql
+      - ./volumes/mariadb:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
 
