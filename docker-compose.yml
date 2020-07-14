@@ -7,7 +7,7 @@ services:
       - "80:80"
     restart: always
     volumes:
-      - ./volumes/apache/conf:/etc/apache2/sites-enabled
+      - ./volumes/apache:/etc/apache2/sites-enabled
       - ~/Desarrollo:/var/www/html
 
   database:
