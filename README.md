@@ -5,11 +5,20 @@ Development environment with:
 * Debian
 * Apache
 * MariaDB
-* PHP 7
+* PHP
 * phpMyAdmin
 
 PHP included in this bundle uses the [php](https://hub.docker.com/_/php/) image with apache tag,
 which also uses the [debian](https://hub.docker.com/_/debian) image.
+
+## Usage
+
+First, you need to create a `custom.ini` file in `volumes/php/` directory. There is a file
+called `custom.ini.example`, you can copy it and rename it to `custom.ini`. Then you can execute:
+
+```shell
+docker-compose up -d
+```
 
 ## Virtual hosts
 
