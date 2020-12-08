@@ -11,20 +11,11 @@ Development environment with:
 PHP included in this bundle uses the [php](https://hub.docker.com/_/php/) image with apache tag,
 which also uses the [debian](https://hub.docker.com/_/debian) image.
 
-## Usage
-
-First, you need to create a `custom.ini` file in `volumes/php/` directory. There is a file
-called `custom.ini.example`, you can copy it and rename it to `custom.ini`. Then you can execute:
-
-```shell
-docker-compose up -d
-```
-
 ## Virtual hosts
 
 By default, the Apache containers defines a volume on `/etc/apache2/sites-enabled`, so you can add
-configuration files to define virtual hosts. For example, you can add a file named `sites.conf` with
-the following:
+configuration files in the `volumes/apache-php*` directories to define virtual hosts. For example,
+you can create a file named `sites.conf` with the following:
 
 ```xml
 <VirtualHost *:80>

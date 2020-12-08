@@ -1,14 +1,22 @@
 version: "3"
 
 services:
-  web:
-    build: apache/
+  apache-php8:
+    build: apache-php8/
     ports:
       - "80:80"
     restart: always
     volumes:
-      - ./volumes/apache:/etc/apache2/sites-enabled
-      - ./volumes/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./volumes/apache-php8:/etc/apache2/sites-enabled
+      - ~/Desarrollo:/var/www/html
+
+  apache-php7:
+    build: apache-php7/
+    ports:
+      - "8080:80"
+    restart: always
+    volumes:
+      - ./volumes/apache-php7:/etc/apache2/sites-enabled
       - ~/Desarrollo:/var/www/html
 
   database:
