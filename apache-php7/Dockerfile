@@ -7,7 +7,7 @@ RUN apt-get update \
     --with-jpeg \
     --with-webp \
     --with-xpm \
-  && docker-php-ext-install gd pdo_mysql \
+  && docker-php-ext-install gd pdo_mysql opcache \
   && a2enmod rewrite \
   && apt-get clean
 
