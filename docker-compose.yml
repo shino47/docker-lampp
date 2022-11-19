@@ -1,22 +1,31 @@
 version: "3"
 
 services:
-  apache-php8:
-    build: build/apache-php8/
+  apache-php74:
+    build: build/apache-php74/
     ports:
-      - "80:80"
+      - "8074:80"
     restart: always
     volumes:
-      - ./volumes/apache-php8:/etc/apache2/sites-enabled
+      - ./volumes/apache-php74:/etc/apache2/sites-enabled
       - ~/Desarrollo:/var/www/html
 
-  apache-php7:
-    build: build/apache-php7/
+  apache-php80:
+    build: build/apache-php80/
     ports:
       - "8080:80"
     restart: always
     volumes:
-      - ./volumes/apache-php7:/etc/apache2/sites-enabled
+      - ./volumes/apache-php80:/etc/apache2/sites-enabled
+      - ~/Desarrollo:/var/www/html
+
+  apache-php81:
+    build: build/apache-php81/
+    ports:
+      - "8081:80"
+    restart: always
+    volumes:
+      - ./volumes/apache-php81:/etc/apache2/sites-enabled
       - ~/Desarrollo:/var/www/html
 
   database:
