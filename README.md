@@ -7,10 +7,10 @@ Development environment with:
 * MariaDB
 * PHP
 * phpMyAdmin
-* MailHog
+* Mailpit
 
-PHP included in this bundle uses the [php](https://hub.docker.com/_/php/) image with apache tag,
-which also uses the [debian](https://hub.docker.com/_/debian) image.
+PHP included in this bundle uses the [PHP](https://hub.docker.com/_/php/) image with Apache tag,
+which also uses the [Debian](https://hub.docker.com/_/debian) image.
 
 ## Virtual hosts
 
@@ -51,13 +51,13 @@ DB_HOST=172.17.0.1
 `172.17.0.1` is the default host IP in the bridged network. Basically, you are connecting from the
 Laravel app to the host's database.
 
-### MailHog
+### Mailpit
 
-To use MailHog in a Laravel application, you can edit your `.env` file:
+To use Mailpit in a Laravel application, you can edit your `.env` file:
 
 ```ini
 MAIL_MAILER=smtp
-MAIL_HOST=mailhog
+MAIL_HOST=mailpit
 MAIL_PORT=1025
 MAIL_ENCRYPTION=null
 MAIL_USERNAME=no-reply@example.com

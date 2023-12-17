@@ -50,9 +50,11 @@ services:
     depends_on:
       - database
 
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - "1025:1025"
-      - "8025:8025"
+  mailpit:
+    image: axllent/mailpit
     restart: always
+    volumes:
+      - ./volumes/mailpit:/data
+    ports:
+      - 8025:8025
+      - 1025:1025
